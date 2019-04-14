@@ -12,13 +12,15 @@
 }
 
 body {
+	margin: 0;
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
 	line-height: 1.75;
 	font-family: $default-font;
 	overflow-x: hidden;
-	opacity: 1; // Когда подключатся стили, они будут видны. Для прелоудера
+	color: $text;
+	opacity: 1; // Когда подключаются стили, они будут видны. Для прелоудера
 	input, textarea {
 		border: #666 1px solid;
 		outline: none;
@@ -29,6 +31,25 @@ body {
 			border-color: green;
 		}
 	}
+
+	&.ishome {
+		.site-header {
+			min-height: 700px;
+			height: 100vh;
+			background-color: $dark;
+			color: #ffffff;
+		}
+	}
+}
+
+section, header {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+}
+
+section {
+	background-color: #ffffff;
 }
 
 .img-responsive {
@@ -48,6 +69,53 @@ b, strong {
 	font-weight: bold;
 }
 
+.top-line {
+	padding-top: 40px;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
 
+	&__img {
+		width: 128px;
+		height: auto;
+
+		margin-left: 40px;
+	}
+
+	&__phone {
+		position: absolute;
+		right: 85px;
+		top: 44px;
+		font-family: 'firasans', sans-serif;
+		font-size: 20px;
+		white-space: nowrap;
+
+		.fa {
+			color: #555555;
+			font-size: 22px;
+			margin-right: 3px;
+		}
+	}
+
+	.hamburger {
+		right: 0;
+		top: 34px;
+		position: absolute;
+		
+
+		.hamburger {
+			&-box {
+				width: 34px;
+			}
+
+			&-inner, &-inner:after, &-inner:before {
+				border-radius: 0;
+				width: 34px;
+				height: 2px;
+				background-color: #ffffff;
+			}
+		}
+	}
+}
 
 @import "media"; // Always at the end
