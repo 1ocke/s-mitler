@@ -15,10 +15,10 @@ body {
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
-	line-height: 1.65;
+	line-height: 1.75;
 	font-family: $default-font;
 	overflow-x: hidden;
-	color: $text;
+	opacity: 1; // Когда подключатся стили, они будут видны. Для прелоудера
 	input, textarea {
 		border: #666 1px solid;
 		outline: none;
