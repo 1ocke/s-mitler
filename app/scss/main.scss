@@ -78,8 +78,8 @@ b, strong {
 	&__img {
 		width: 128px;
 		height: auto;
-
 		margin-left: 40px;
+		vertical-align: middle;
 	}
 
 	&__phone {
@@ -101,21 +101,93 @@ b, strong {
 		right: 0;
 		top: 34px;
 		position: absolute;
+
+		&-box {
+			width: 34px;
+		}
+
+		&-inner, &-inner:after, &-inner:before {
+			border-radius: 0;
+			width: 34px;
+			height: 2px;
+			background: #ffffff;
+		}
+	}
+	
+}
+
+.mm-navbar {
+	height: auto;
+	position: relative;
+	border: none;
+	.mm-title {
+		padding: 0;
+
+		img {
+			width: 128px;
+			height: auto;
+			margin: 10px 0 35px;
+		}
+	}
 		
+}
 
-		.hamburger {
-			&-box {
-				width: 34px;
+html.mm-opened {
+	overflow-y: scroll;
+}
+.mm-panels > .mm-panel.mm-hasnavbar {
+	right: -18px;
+}
+.mm-listview>li:not(.mm-divider):after {
+	display: none;
+}
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview>li.mm-selected>span {
+	background-color: transparent;
+	color: $accent;
+}
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before {
+	height: 0;
+}
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview {
+	margin-top: 0;
+}
+
+.mm-listview {
+	> li {
+		> a {
+			transition: color .25s ease;
+			padding-left: 14%; 
+			padding-right: 14%;
+			padding-top: 8px;
+
+			&:hover {
+				color: $accent;
+
+				&::before {
+					color: $accent;
+				}
 			}
+			&::before {
+				content: '\f219';
+				font-family: fontawesome;
+				margin-right: 8px;
+				text-decoration: none;
+				font-size: 12px;
+				color: #ffffff;
+				transition: color .25s ease;
+			}
+		}
 
-			&-inner, &-inner:after, &-inner:before {
-				border-radius: 0;
-				width: 34px;
-				height: 2px;
-				background-color: #ffffff;
+		&.active {
+			&>a {
+				color: $accent;
 			}
 		}
 	}
-}
+	
+		
+}	
+
+
 
 @import "media"; // Always at the end
