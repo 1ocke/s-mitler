@@ -363,6 +363,64 @@ html.mm-opened {
 	}
 }
 
+.header-social {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: flex;
+	height: 100%;
+	border-left: 1px solid rgba(#ffffff, .06);
+	padding: 0 12.5px;
+}
+
+.soc {
+	margin: auto;
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		display: block;
+		height: 38px;
+		width: 38px;
+		color: #2c2c2c;
+		font-size: 17px;
+		background-color: rgba(#ffffff, 0.2);
+		border-radius: 10em;
+		text-align: center;
+		margin: 18px 0;
+		line-height: 38px;
+		transition: background-color .25s ease;
+
+		&:hover {
+			background-color: rgba(#ffffff, 0.4);
+		}
+	}
+}
+
+.header-contacts {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid rgba(#ffffff, .15);
+	padding: 12.5px 0;
+	width: 100%;
+	background-color: rgba(#151515, .15);
+	font-weight: 300;
+	font-size: 14px;
+
+	.fa {
+		margin-right: 5px;
+		color: #555555;
+	}
+
+	.phone-h {
+		font-family: firasans, sans-serif;
+		text-align: center;
+	}
+}
 
 
 @import "media"; // Always at the end
