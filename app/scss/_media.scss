@@ -1,26 +1,73 @@
 @import "vars";
 
-
 /*==========  Desktop First  ==========*/
 
 // ≥1200px
 @include media-breakpoint-down(lg) {
-	
+	.welcome {
+        .title {
+            font-size: 64px;
+        }
+    }
+    .header-contacts {
+        font-size: 14px;
+    }
 }
 
 // ≥992px
 @include media-breakpoint-down(md) {
-
+    .welcome {
+        .title {
+            font-size: 47px;
+        }
+    }
 }
 
 // ≥768px
 @include media-breakpoint-down(sm) {
-
+    .header-contacts {
+        .phone-h {
+            text-align-last: left;
+        }
+    }
+    .button {
+        padding: 12px 36px;
+    }
 }
 
 // ≥576px
 @include media-breakpoint-down(xs) {
+    .welcome {
+        .title {
+            font-size: 28px;
+            margin-top: 5px;
+        }
+        p {
+            span {
+                font-size: 9px;
+            }
+        }
+        strong {
+            margin-top: 14px;
+            font-size: 14px;
+        }
+    }
 
+    .header-composition {
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .welcome {
+        p {
+            span {
+                font-size: 8px;
+            }
+        }
+    }
 }
 
 
