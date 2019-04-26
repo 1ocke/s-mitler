@@ -57,6 +57,9 @@ section {
 	&.inverse {
 		color: #ffffff;
 		background-color: $dark;
+		&.s-call {
+			background-color: #ffffff;
+		}
 	}
 
 	.h2 {
@@ -138,6 +141,8 @@ b, strong {
 	}
 	
 }
+
+// Переписываем стили плагина мменю
 
 .mm-navbar {
 	height: auto;
@@ -587,6 +592,20 @@ $colors: $blue, $red, $accent;
 			margin-top: 0;
 		}
 	}
+	&-call {
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: 10%;
+
+		&::before {
+			content: '';
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			background-color: rgba($accent, .9);
+		}
+	}
 }
 
 .section-overlay {
@@ -660,6 +679,152 @@ $colors: $blue, $red, $accent;
 		.fotorama__thumb {
 			border-color: #3d3c3c;
 		}
+	}
+}
+
+// Форма обратной связи
+
+body input:focus:required:invalid, body textarea:focus:required:invalid,
+body input:required:valid, body textarea:required:valid {
+	border-color: rgba(#000000, .1);
+}
+
+body input, body textarea, body select, .selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active {
+	background-color: transparent;
+	border: 1px solid rgba(#000000, .1);
+	border-bottom: 2px solid rgba(#000000, .1);
+	border-radius: 2px;
+	padding: 8px;
+	color: #333333;
+	outline: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+select {
+	padding: 10px 22px;
+}
+
+.selectize-control .selectize-input {
+	box-shadow: none;
+	overflow: inherit;
+	line-height: inherit;
+	text-align: left;
+
+	input {
+		font-size: 16px;
+	}
+	&.dropdown-active::before {
+		background-color: transparent;
+	}
+}
+
+.selectize-control.single {
+	.selectize-input, &.dropdown-active {
+		&::after {
+			border: none;
+			content: '\f107';
+			font-family: fontawesome;
+			position: absolute;
+			right: 30px;
+			top: 12px;
+		}
+		&.dropdown-active::after {
+			content: '\f106';
+		}
+	}
+
+	.selectize-dropdown {
+		font-size: 15px;
+		border: none;
+		border-radius: 0;
+		text-align: left;
+
+		&-content {
+			.option {
+				padding: 10px 22px;
+
+				&.active {
+					background-color: lighten($accent, 15);
+				}
+			}
+		}
+	}
+}
+
+.success {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	z-index: 10;
+	span {
+		margin: auto;
+	}
+	& ~ * {
+		transition: all .5s ease;
+	}
+	&.active {
+		& ~ * {
+			opacity: .5;
+			filter: blur(10px);
+		}
+	}
+}
+
+.callback {
+	padding: 25% 0;
+	position: relative;
+
+	&-logo {
+		img {
+			width: 100px;
+			height: auto;
+		}
+	}
+
+	.formhead {
+		margin: 0;
+		font-size: 30px;
+		text-transform: uppercase;
+		font-weight: 800;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	input, textarea, select, 
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.input-active	 {
+		width: 100%;
+		margin-top: 17px;
+		color: #ffffff;
+
+		&::-webkit-input-placeholder {
+			color: #ffffff;
+			opacity: 1;
+		}
+		&::-moz-placeholder {
+			color: #ffffff;
+			opacity: 1;
+		}
+		&::-ms-input-placeholder {
+			color: #ffffff;
+		}
+
+		option {
+			color: #333333;
+		}
+	}
+
+	button {
+		margin-top: 40px;
 	}
 }
 
