@@ -47,6 +47,18 @@
             padding: 12% 0;
         }
     }
+
+    .footer-addr {
+        margin-bottom: 15px;
+        .footer-phone {
+            font-size: 24px;
+            padding-top: 0;
+
+            .fa {
+                top: 9px;
+            }
+        }
+    }
 }
 
 // ≥768px
@@ -85,6 +97,18 @@
         .h2 {
             margin: 0;
         }
+    }
+
+    .footer-social {
+        margin-top: 0;
+
+        .soc li a {
+            margin-top: 0;
+        }
+    }
+
+    .footer-menu {
+        padding-left: 20px;
     }
 }
 
